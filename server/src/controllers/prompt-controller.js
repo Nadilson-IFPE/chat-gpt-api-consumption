@@ -8,13 +8,13 @@ module.exports = {
         const inputModel = new InputPrompt(request.body)
 
         try {
-            const response = await openAI.createCompletion(
+            const resposta = await openAI.createCompletion(
                 openai.textCompletion(inputModel)
             )
 
             return response.status(200).json({
                 success: true,
-                data: response.data.choices[0].text
+                data: resposta.data.choices[0].text
             })
         } catch (error) {
 
